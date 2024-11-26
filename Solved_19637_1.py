@@ -1,16 +1,16 @@
 import sys
 sys.stdin.readline
 
-N,M = map(int, input().split())
+N,M = map(int, sys.stdin.readline().split())
 arr = []
 
 for i in range(N):
-    name,power = input().split()
+    name,power = sys.stdin.readline().split()
     arr.append((name,int(power)))
     
 for i in range(M):
     
-    power = int(input())
+    power = int(sys.stdin.readline())
     
     start = 0
     end = N-1

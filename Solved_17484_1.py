@@ -7,6 +7,7 @@ dy = [-1,0,1]
 graph = [[] for _ in range(N)]
 answer = 1000000000
 def dfs(px,py,pd,cul):
+    global answer
     if px == N-1:
         answer = min(answer,cul)
         return

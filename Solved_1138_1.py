@@ -17,7 +17,3 @@ for i in range(N):
             
 print(*line)
     
-
-
-    
-    

@@ -1,29 +1,60 @@
-import sys
-
-T  = int(sys.stdin.readline())
+T = int(input())
 
 for i in range(T):
-    n,k,t,l = map(int, sys.stdin.readline().split())
-    score = [[0] for _ in range(k)]
-    submit = [0 for _ in range(n)]
-    time = [0 for _ in range(n)]
+    n,k,t,m = map(int, input().split())
     
-    for k in range(l):
-        i,j,s = map(int, sys.stdin.readline().split())
-        score[i-1][j-1] = max(score[i-1][j-1], s)
-        submit[i-1] += 1
-        time[i-1] = k
+    problems = [[0] * k for _ in range(n)]
+    submissions = [0] * n
+    time = [0] * n
+    
+    for _ in range(m):
+        i, j, s = map(int, input().split())
+        problems[i-1][j-1] = max(problems[i-1][j-1], s)
+        submissions[i-1] += 1
+        time[i-1] = i
+
         
-    rank = []
-    
-    for h in range(n):
-        rank.append((sum(score[h]), submit[h], time[h], h))
+    scores = [0] * n
+    for i in range(n):
+        scores[i] = sum(problems[i])
         
-    rank.sort(key = lambda x: (-x[0], x[1], x[2]))
     
-    for r in range(n):
-        if rank[r][3] == t-1:
-            print(r+1)
+    for i in  range(n):
+        if i == t-1:
+            print(sorted(scores, reverse=True).index(scores[i])+1)
             break
         
-           
+            
+        
+            
+        
+        
+    
+
+
+            
+            
+    
+        
+        
+        
+        
+   
+        
+        
+        
+        
+
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

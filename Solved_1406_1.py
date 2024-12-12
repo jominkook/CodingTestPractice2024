@@ -1,24 +1,23 @@
 import sys
-input = sys.stdin.readline
-text = input().strip()
-M = int(input())
+sys.stdin.readline
+text = sys.stdin.readline().strip()
+M = int(sys.stdin.readline())
 
 left = []
 right = []
 
-for _ in range(M):
-    command = input().strip()
-    if command[0] == 'L':
-        if text:
-            right.append(text[-1])
-            text = text[:-1]
-    elif command[0] == 'D':
-        if right:
-            text += right.pop()
-    elif command[0] == 'B':
-        if text:
-            text = text[:-1]
-    else:
-        text += command[2]
-        
-print(text + ''.join(right[::-1]))
+for i in range(len(text)):
+    left.append(text[i])
+    
+for i in range(M):
+    cmd = sys.stdin.readline().strip()
+    if cmd[0] == 'L' and left:
+        right.append(left.pop())
+    elif cmd[0] == 'D' and right:
+        left.append(right.pop())
+    elif cmd[0] == 'B' and left:
+        left.pop()
+    elif cmd[0] == 'P':
+        left.append(cmd[2])
+                
+print(''.join(left + right[::-1]))

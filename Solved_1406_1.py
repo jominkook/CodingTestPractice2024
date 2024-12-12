@@ -1,23 +1,23 @@
 import sys
-sys.stdin.readline
-text = sys.stdin.readline().strip()
-M = int(sys.stdin.readline())
+input = sys.stdin.readline
 
-left = []
-right = []
+left_stack = list(input().strip())
+right_stack = []
+M = int(input())
 
-for i in range(len(text)):
-    left.append(text[i])
-    
-for i in range(M):
-    cmd = sys.stdin.readline().strip()
-    if cmd[0] == 'L' and left:
-        right.append(left.pop())
-    elif cmd[0] == 'D' and right:
-        left.append(right.pop())
-    elif cmd[0] == 'B' and left:
-        left.pop()
-    elif cmd[0] == 'P':
-        left.append(cmd[2])
-                
-print(''.join(left + right[::-1]))
+for _ in range(M):
+    command = input().split()
+    if command[0] == 'L':
+        if left_stack:
+            right_stack.append(left_stack.pop())
+    elif command[0] == 'D':
+        if right_stack:
+            left_stack.append(right_stack.pop())
+    elif command[0] == 'B':
+        if left_stack:
+            left_stack.pop()
+    elif command[0] == 'P':
+        left_stack.append(command[1])
+
+# 결과 출력
+print(''.join(left_stack + right_stack[::-1]))

@@ -15,7 +15,6 @@ for i in range(N):
         power_list.append([name, power])
         
 
-    
 
 for i in range(M):
     char_power = int(sys.stdin.readline())

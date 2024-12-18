@@ -11,7 +11,6 @@ while queue:
 print("<",end="")
 for i in range(N-1):
     print(result[i],end=", ")
-    
 print(result[-1],end=">")
     
 

@@ -1,4 +1,4 @@
-#풀이2
+#풀이2  ``
 
 N,K = map(int,input().split())
 

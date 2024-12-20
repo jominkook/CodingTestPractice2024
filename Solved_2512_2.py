@@ -1,3 +1,5 @@
+#예산문제
+
 N = int(input())
 
 budget =list(map(int,input().split()))

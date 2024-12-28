@@ -1,5 +1,5 @@
 #N번째 큰 수 2075
-
+#heapq를 이용하여 풀이
 import heapq
 
 N = int(input())

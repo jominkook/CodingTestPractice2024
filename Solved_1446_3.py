@@ -31,10 +31,9 @@ def bfs(D):
                     q.append(end)
                     
         #현재 위치에서 이동할 수 있는 경우
-        if x+1 <= D:
-            if distance[x+1] > distance[x] + 1:
-                distance[x+1] = distance[x] + 1
-                q.append(x+1)
+        if x+1 <= D:    
+            distance[x+1] = min(distance[x+1], distance[x]+1)
+            q.append(x+1)
                 
     return distance[D]
 

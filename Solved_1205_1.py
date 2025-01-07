@@ -1,3 +1,4 @@
+#실패
 N,S,P = map(int,input().split())
 
 

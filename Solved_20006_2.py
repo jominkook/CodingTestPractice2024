@@ -1,21 +1,20 @@
-
-p,m = map(int, input().split())
+p, m = map(int, input().split())
 
 rooms = []
 
 for _ in range(p):
-    l,n = input().split()
-    l = int(l)
+    level, name = input().split()
+    level = int(level)
     flag = False
     for room in rooms:
-        key =room[0][0]
-        if key - 10 <= l <= key + 10:
-            room.append((l,n))
+        key = room[0][0]
+        if key - 10 <= level <= key + 10 and len(room) < m:
+            room.append((level, name))
             flag = True
             break
     if not flag:
-        rooms.append([(l,n)])
-        
+        rooms.append([(level, name)])
+
 for room in rooms:
     if len(room) == m:
         print('Started!')
@@ -23,6 +22,3 @@ for room in rooms:
         print('Waiting!')
     for player in sorted(room, key=lambda x: x[1]):
         print(*player)
-        
-        
-# Solved!

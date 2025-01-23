@@ -1,24 +1,24 @@
-#백준 크로스 컨트리
-
+from collections import defaultdict
 
 T = int(input())
+
 for _ in range(T):
     N = int(input())
-    arr = []
-    for _ in range(N):
-        arr.append(list(map(int, input().split())))
-    arr.sort(key=lambda x: x[0])
-    max_val = 0
-    for i in range(N):
-        for j in range(i+1, N):
-            if arr[i][1] > arr[j][1]:
-                max_val = max(max_val, arr[i][0] - arr[j][0] + arr[i][1] - arr[j][1])
-    print(max_val)
-
+    teamNums = list(map(int, input().split()))
     
-
+    team_cnt = defaultdict(int)
+    team_dict = defaultdict(list)
     
-
-
-
+    for i in teamNums:
+        team_cnt[i] += 1
     
+    # 팀 번호 필터링: 6명의 선수가 있는 팀만 남김
+    teamNums = [x for x in teamNums if team_cnt[x] == 6]
+    
+    for idx, num in enumerate(teamNums):
+        team_dict[num].append(idx)
+        
+    result = list(team_dict.keys())
+    result.sort(key=lambda x: (sum(team_dict[x][:4]), team_dict[x][4], team_dict[x][5]))
+    
+    print(result[0])

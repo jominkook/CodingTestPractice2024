@@ -14,7 +14,7 @@ for i in range(T):
             
     scores = [team for team in teams if team in team_limit]
     counter = {}
-    
+        
     for idx,score in enumerate(scores,start = 1):
         if score not in counter:
             counter[score] = [idx,[idx]]

@@ -40,9 +40,6 @@ for _ in range(T):
                 elif rankingBoard[team][0] == rankingBoard[t-1][0]:
                     if rankingBoard[team][1] < rankingBoard[t-1][1]:
                         me += 1
-                        
-                        
-                
-                    
+                                      
     print(me)
  

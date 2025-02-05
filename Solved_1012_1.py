@@ -1,6 +1,9 @@
 #백준 1012 유기농배추
 #5번째 풀이
 
+import sys
+sys.setrecursionlimit(10000)
+
 T = int(input())
 dx = [-1,1,0,0]
 dy = [0,0,-1,1]

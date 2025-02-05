@@ -17,7 +17,17 @@ for i in range(N):
             for k in range(len(words)):
                 if words[k][0].upper() == keys[j]:
                     flag = True
+                    words[k] = "[" + words[k][0] + "]" + words[k][1:]
                     
+                    print(" ".join(words))
+                    
+                    break
+                
+            if flag:
+                break
+            
+        else:
+            print(*words)
     
  
         

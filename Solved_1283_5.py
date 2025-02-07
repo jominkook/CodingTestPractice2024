@@ -14,6 +14,7 @@ for _ in range(N):
             word[i] = "[" + word[i][0] + "]" + word[i][1:]
             print(" ".join(word))
             break
+    #break가 실행되지 않았을 때 else문 실행
     else:
         for j in range(len(word)):
             flag = False
@@ -29,6 +30,7 @@ for _ in range(N):
         else:
             print(*word)
     
+
     
     
     

@@ -1,31 +1,49 @@
-# 백준 2816 디지털티비
-# 첫번째 풀이
+# 백준 2816 디지털 티비
+
+# 입력
 
 N = int(input())
-
-channels = []
+channel = []
 
 for i in range(N):
-    channels.append(input())
-    
-if channels[0] == 'KBS1':
-    print('1'*i + '4'*i)
-    print('4'*i + '1'*i)
-elif channels[0] == 'KBS2':
-    print('1'*i + '4'*i)
-    print('4'*i + '1'*i)
-else:
-    for i in range(N):
-        if channels[i] == 'KBS1':
-            print('1'*i + '4'*i)
-            print('4'*i + '1'*i)
-            break
-    for i in range(N):
-        if channels[i] == 'KBS2':
-            print('1'*i + '4'*i)
-            print('4'*i + '1'*i)
-            break
+    name = input()
+    if name == 'KBS1':
+        kbs1 = i
+    elif name == 'KBS2':
+        kbs2 = i
         
+res = ''
+res += '1' * kbs1
+res += '4' * kbs1
+if kbs1 > kbs2:
+    kbs2 += 1
+res += '1' * kbs2
+res += '4' * (kbs2 - 1)
+print(res)
+    
+
+
+    
+    
+    
+
+    
+
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+    
+    
         
         
         

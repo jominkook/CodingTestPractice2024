@@ -21,6 +21,7 @@ while True:
             if 0 <= nx < H and 0 <= ny < W:
                 if graph[nx][ny] == 1 and not visited[nx][ny]:
                     dfs(nx, ny)
+                    
 
     for i in range(H):
         graph.append(list(map(int, input().split())))

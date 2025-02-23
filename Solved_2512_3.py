@@ -2,8 +2,6 @@ N = int(input())
 
 budgets = list(map(int, input().split()))
 
-민국 = 0
-print(민국)
 
 M = int(input())
 

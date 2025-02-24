@@ -1,3 +1,6 @@
+#백준 16395 파스칼의 삼각형
+# 두번째 풀이
+# dp
 N,K = map(int,input().split())
 
 dp = [[0]*N for _ in range(N)]

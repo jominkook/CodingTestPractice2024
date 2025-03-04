@@ -3,7 +3,6 @@
 
 import sys
 input = sys.stdin.readline
-
 nums = str(input().rstrip())
 
 i = 0

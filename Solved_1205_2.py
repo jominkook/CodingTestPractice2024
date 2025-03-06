@@ -4,6 +4,7 @@ N, NEW_SCORE, P = map(int, input().split())
 scores = []
 if N == 0 and NEW_SCORE == 0 and P == 0:
     print(1)
+    exit()
 else:
     scores = list(map(int, input().split()))
     scores.append(NEW_SCORE)
